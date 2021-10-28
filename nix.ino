@@ -10,7 +10,7 @@ const char *ssid = "whiterose";
 const char *pwd = "quieresplota?";
 
 // HTML and CSS style
-const String MENU = "<body><p>RED RF v1.0</p><div id=\"header\"><div id=\"menu\"><ul><a class=\"myButton\" href=\"/\">Menu</a><a class=\"myButton\" href=\"/brutefore\">Bruteforce</a><a class=\"myButton\" href=\"/debrujin\">DeBrujin Attack</a></ul></div></div></style>";
+const String MENU = "<body><p>RED RF v1.0</p><div id=\"header\"><div id=\"menu\"><ul><a class=\"myButton\" href=\"/\">Menu</a><a class=\"myButton\" href=\"/debrujin\">DeBrujin Attack</a></ul></div></div></style>";
 const String HTML_CSS_STYLING = "<html><head><meta charset=\"utf-8\"><title>Evil Crow RF</title><style>     body {     background-color: #333333;     font-family: \"Century Gothic\", Arial;     color: white;     margin: 20px;}.myButton:link, .myButton:visited {background: linear-gradient(#777777, #444444);color: white;padding: 4px;min-width: 100px;border-radius: 5px;border: 2px solid white;text-align: center;margin-right: 20px;text-decoration: none;display: inline-block;transition: 0.25s;}  .myButton:hover, .myButton:active {background: linear-gradient(#888888, #555555);border: 2px solid deepskyblue;border-radius: 10px;transform: scale(1.15);}</style></head>";
 
 //Web Server
@@ -71,12 +71,6 @@ void setup()
 		server.send_P(200, "text/html", DeBrujin);
 	});
 
-	//Load Jamming Attack
-	//server.on("/jammer", []()
-	//{
-		//server.send_P(200, "text/html", Jammer);
-	//});
-
 	server.on("/dodbj", []()
 	{
 		rfsend1(300, debruijn_ten);
@@ -87,17 +81,13 @@ void setup()
 		rfsend2(390, debruijn_nine);
 		rfsend1(310, debruijn_eight);
 		rfsend2(310, debruijn_eight);
-		server.send(200, "text/plain", "Attack done :))");
+		server.send_P(200, "text/html", Success);
 	});
-
-	//server.on("/dojamm", []()
-	//{
-		//server.send(200, "text/plain", "YEah");
-	//});
-
+ 
 	server.begin();
 }
 
+//Send signal by module 1
 void rfsend1(int frequency, String mystr)
 {
   code = strtol(mystr.c_str(),NULL,0);
@@ -111,6 +101,7 @@ void rfsend1(int frequency, String mystr)
 	delay(1);
 }
 
+//Send signal by module 2
 void rfsend2(int frequency, String mystr)
 {
   code = strtol(mystr.c_str(),NULL,0);

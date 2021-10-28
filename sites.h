@@ -1,7 +1,7 @@
 const char DeBrujin[] PROGMEM = R"=====(
 <html>
 <head>
-    <title>RX Config</title>
+    <title>DeBrujin</title>
     <meta charset="utf-8">
     <style>
         body {
@@ -59,9 +59,7 @@ const char DeBrujin[] PROGMEM = R"=====(
     <div id="menu">
         <ul>
             <a class="myButton" href="/">Menu</a>
-            <a class="myButton" href="/rxconfig">RX Config</a>
-            <a class="myButton" href="/txconfig">TX Config</a>
-            <a class="myButton" href="/bruteforce">Brute Force</a>
+            <a class="myButton" href="/debrujin">DeBrujin Attack</a>
       <a class="myButton" href="/viewlog">RX Log</a>
       <a class="myButton" href="/delete">Delete Log</a>
         </ul>
@@ -70,16 +68,29 @@ const char DeBrujin[] PROGMEM = R"=====(
 <hr>
 </center>
 <br>
-<FORM action="/dodbj" method="post" id="config" target="iframe">
+<form action="/dodbj" method="post" id="config" target="/success">
     <p>You are going to start a DeBrujin Attack</p>
     <p>Stay near the target...</p>
     <hr>
-    <INPUT class="submitBtn" type="submit" value="Apply">
+    <INPUT class="submitBtn" type="submit" value="Send">
 </form>
 <br>
 <hr>
 <br>
-<iframe style="visibility: hidden;" src="http://" )+local_IPstr+"/setrx" name="iframe"></iframe>
+</body>
+</html>
+)=====";
+
+const char Success[] PROGMEM = R"=====(
+<html>
+<head>
+    <title>Success</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<center>
+    <p>Attack sent succesfully :)</p>
+</center>
 </body>
 </html>
 )=====";
