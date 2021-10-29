@@ -14,14 +14,18 @@ const char DeBrujin[] PROGMEM = R"=====(
             background: linear-gradient(#777777, #444444);
             color: white;
             padding: 4px;
-            min-width: 100px;
+            width: 600px;
+            height: 90px;
             border-radius: 5px;
             border: 2px solid white;
             text-align: center;
-            margin-right: 20px;
+            margin-right: 90px;
+            margin-left: 90px;
+            margin-bottom: 90px;
             text-decoration: none;
             display: inline-block;
             transition: 0.25s;
+            font-size: 60px;
         }
         .myButton:hover, .myButton:active {
             background: linear-gradient(#888888, #555555);
@@ -33,23 +37,22 @@ const char DeBrujin[] PROGMEM = R"=====(
             background: linear-gradient(#777777, #444444);
             color: white;
             padding: 4px;
-            min-width: 100px;
+            width: 900px;
+            height: 300px;
             border-radius: 2.5px;
             border: 2px solid white;
             text-align: center;
             transition: 0.25s;
+            font-size: 90px;
         }
         .submitBtn:hover, .submitBtn:active {
             background: linear-gradient(#888888, #555555);
             border: 2px solid deepskyblue;
         }
-        .console{
-            width: 99%;
-            background-color: black;
-            color: white;
-            font-family: monospace;
-            padding: 5px;
-            border: 0px;
+        .sub {
+            font-size: 90px;
+        }
+
         }
     </style>
 </head>
@@ -60,23 +63,22 @@ const char DeBrujin[] PROGMEM = R"=====(
         <ul>
             <a class="myButton" href="/">Menu</a>
             <a class="myButton" href="/debrujin">DeBrujin Attack</a>
-      <a class="myButton" href="/viewlog">RX Log</a>
-      <a class="myButton" href="/delete">Delete Log</a>
         </ul>
     </div>
 </div>
-<hr>
-</center>
+<hr><hr>
 <br>
 <form action="/dodbj" method="post" id="config" target="/success">
-    <p>You are going to start a DeBrujin Attack</p>
-    <p>Stay near the target...</p>
-    <hr>
+    <p class="sub">You are going to start a DeBrujin Attack</p>
+    <p class="sub">Stay near the target...</p>
+    <br>
+    <br><br>
     <INPUT class="submitBtn" type="submit" value="Send">
 </form>
+<br><br><br><br><br><br>
+<hr><hr>
 <br>
-<hr>
-<br>
+</center>
 </body>
 </html>
 )=====";
