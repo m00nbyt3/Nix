@@ -28,4 +28,4 @@ Select Tools: \
     Flash Frequency - "40MHz" \
     Flash Mode - "DIO" \
 Upload the code to the Evil Crow RF device \
-Press reset button \
+Press reset button
