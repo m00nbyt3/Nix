@@ -1,6 +1,11 @@
 # Nix
 Nix is an RF DeBrujin sequence code transmitter, working on EvilCrowRF (https://github.com/joelsernamoreno/EvilCrow-RF by @joelsernamoreno).
 
+A de Bruijn sequence is a circular (cyclic) arrangement of symbols from a given alphabet where every possible subsequence of a fixed length n appears as a contiguous substring exactly once.
+
+This allows the EvilCrowRF to send a bunch of fixed codes much faster, reducing the needed time for sending them in a bunch.
+
+The firmware allows you to send different de Brujin sequences in a simple but curated web interface.
 
 ## Installation
 
